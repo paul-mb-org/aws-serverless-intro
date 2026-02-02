@@ -1,0 +1,28 @@
+{
+  "name": "aws-serverless-intro",
+  "version": "0.1.0",
+  "bin": {
+    "aws-serverless-intro": "bin/aws-serverless-intro.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@types/jest": "^30",
+    "@types/node": "^24.10.1",
+    "aws-cdk": "2.1104.0",
+    "jest": "^30",
+    "prettier": "^3.8.1",
+    "ts-jest": "^29",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.9.3"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.236.0",
+    "constructs": "^10.0.0"
+  }
+}
