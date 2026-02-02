@@ -3,6 +3,7 @@
 *.d.ts
 node_modules
 .idea
+*.http
 
 # CDK asset staging directory
 .cdk.staging
