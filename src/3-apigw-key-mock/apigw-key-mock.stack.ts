@@ -1,3 +1,72 @@
+/**
+ * SLIDE 2: API GATEWAY: Keys and Usage plan
+ * ------------------------------------------------------------------
+ * "Everything is peaceful. We trust our own frontend."
+ *
+ * [ Employee Dashboard ]
+ * |
+ * | (Trusted Traffic)
+ * v
+ * +-----------------------------+
+ * |      EXISTING API           |
+ * |-----------------------------|
+ * |  - Business Logic Only      |
+ * |  - No Throttling logic      |
+ * |  - No API Key checks        |
+ * +-----------------------------+
+ *
+ * * STATUS: Working perfectly.
+ * * RISK: Zero.
+ */
+
+/**
+ * "OLD WAY" of doing things
+ * ------------------------------------------------------------------
+ * "Sales sold access to 'Client A'. Now we have to protect the API."
+ *
+ * [ Internal Dash ]       [ 🆕 External Client A ]
+ * \                       /
+ * \                     /
+ * v                   v
+ * +-------------------------------------------+
+ * |           EXISTING API (MODIFIED)         |
+ * |-------------------------------------------|
+ * | 🛑 middlewareToCheckEverything            | <-- COMPLEXITY
+ * |                                           |
+ * | ✅ executeBusinessLogic();                |
+ * +-------------------------------------------+
+ *
+ * * * YOU HAVE TO CODE ALL THAT YOURSELF.
+ */
+
+/**
+ * THE SERVERLESS WAY (Usage Plans)
+ * ------------------------------------------------------------------
+ * "Config over Code. Protect the Backend."
+ *
+ * [ Internal Dash ]   [ 🆕 Client A ]      [ 🔮 Client B (Next) ]
+ * |             (ApiKey: 123..)      (ApiKey: 789..)
+ * |                   |                     |
+ * |           +-------v-------+     +-------v-------+
+ * |           |  PLAN: BASIC  |     |  PLAN: PRO    |
+ * |           | (100 req/day) |     | (Uncapped)    |
+ * |           +-------+-------+     +-------+-------+
+ * |                   |                     |
+ * +   +-v-------------v---------------------v-------+
+ * |   |             AWS API GATEWAY                 |
+ * |   |    (Handles Auth, Throttling, & Quotas)     |
+ * +   +---------------------+-----------------------+
+ * |
+ * v
+ * +------------------+
+ * |   EXISTING API   |
+ * | (Code Untouched) |
+ * +------------------+
+ *
+ * * RESULT: Backend logic remains pure.
+ * * SCALING: Add Client C? Just create a new Key. No redeploy needed.
+ */
+
 import { CfnOutput, Stack, StackProps } from "aws-cdk-lib";
 import { Construct } from "constructs";
 import { MockIntegration, Period, RestApi } from "aws-cdk-lib/aws-apigateway";

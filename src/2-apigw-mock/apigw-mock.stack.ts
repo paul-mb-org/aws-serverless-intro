@@ -1,3 +1,38 @@
+/**
+ * SLIDE 1: ENABLE FRONTEND FROM DAY 1
+ * ------------------------------------------------------------------
+ *
+ * [ FRONTEND APPLICATION ]
+ * |
+ * v
+ * +-----------------------------+
+ * |    AWS API GATEWAY (REST)   |
+ * +-----------------------------+
+ * /             \
+ * / (Endpoint A)  \ (Endpoint B)
+ * /   Is it done?   \
+ * v                   v
+ * +------------+      +------------+
+ * |    NO 🚧   |      |   YES ✅   |
+ * |------------|      |------------|
+ * |    MOCK    |      |   LAMBDA   |
+ * | INTEGRATION|      | INTEGRATION|
+ * |------------|      |------------|
+ * | Returns    |      | Executes   |
+ * | Static JSON|      | Logic + DB |
+ * +------------+      +------------+
+ * ^                   ^
+ * |                   |
+ * Day 1 Immediate      Day N Implementation
+ * Unblock              Replacement
+ *
+ * ------------------------------------------------------------------
+ * THE STRATEGY:
+ * 1. Point ALL endpoints to MOCK integration initially.
+ * 2. As Backend Team finishes a Lambda, switch JUST that endpoint.
+ * 3. Frontend url never changes.
+ */
+
 import { CfnOutput, Stack, StackProps } from "aws-cdk-lib";
 import { Construct } from "constructs";
 import { MockIntegration, RestApi } from "aws-cdk-lib/aws-apigateway";

@@ -11,8 +11,8 @@ The `cdk.json` file tells the CDK Toolkit how to execute your app.
 - `npx cdk diff` compare deployed stack with current state
 - `npx cdk synth` emits the synthesized CloudFormation template
 
-
 ## Stacks limits
+
 - 2500 resources per stack
 - 200 outputs per stack
 - 200 parameters per stack

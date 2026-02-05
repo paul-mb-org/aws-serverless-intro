@@ -1,0 +1,12 @@
+{
+  "name": "barman-api-lambdas",
+  "version": "1.0.0",
+  "dependencies": {
+    "@aws-sdk/client-lambda": "^3.965.0",
+    "@aws-sdk/client-sqs": "^3.965.0",
+    "@aws/durable-execution-sdk-js": "^1.0.1"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.159"
+  }
+}

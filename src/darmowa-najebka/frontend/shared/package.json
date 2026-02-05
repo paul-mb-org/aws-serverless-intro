@@ -1,0 +1,19 @@
+{
+  "name": "@darmowa-najebka/shared",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "index.ts",
+  "dependencies": {
+    "@aws-amplify/pubsub": "^6.1.68",
+    "amazon-cognito-identity-js": "^6.3.12",
+    "aws-amplify": "^6.10.0"
+  },
+  "peerDependencies": {
+    "react": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.13",
+    "vite": "^7.3.1"
+  }
+}

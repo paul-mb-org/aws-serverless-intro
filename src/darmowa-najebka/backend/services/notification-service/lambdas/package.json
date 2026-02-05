@@ -1,0 +1,11 @@
+{
+  "name": "notification-lambda",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "dependencies": {
+    "@aws-sdk/client-iot-data-plane": "^3.965.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.159"
+  }
+}
